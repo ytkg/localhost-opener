@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>アドレスバーがないブラウザからhttp://localhost:xxxxに移動できるページ</title>
+    <meta name="description" content="アドレスバーがないブラウザから http://localhost:xxxx に移動できるページを作成しました。">
+    <meta name="keywords" content="アドレスバー, ブラウザ, localhost, 移動, ページ">
+  </head>
+  <body>
+    <h1>アドレスバーがないブラウザからhttp://localhost:xxxxに移動できるページ</h1>
+
+    <select id="protocolSelect">
+      <option value="http">http</option>
+      <option value="https">https</option>
+    </select>
+
+    <span>://localhost:</span>
+
+    <input type="number" id="portInput" placeholder="ポート番号" value="3000" min="1" max="65535">
+
+    <button onclick="moveToHomePage()">開く</button>
+
+    <script>
+      function moveToHomePage() {
+        var protocol = document.getElementById("protocolSelect").value;
+        var port = document.getElementById("portInput").value;
+        window.location.href = protocol + "://localhost:" + port;
+      }
+    </script>
+  </body>
+</html>
